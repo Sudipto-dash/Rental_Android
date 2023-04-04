@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/ic_account"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+
+            android:text="Hello User"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/post"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="16dp"
+
+            android:text="Post a rent!"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/postButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/userName"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/post"
+
+            android:src="@drawable/add_circle_outline" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_image"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edit_input_box"
+                android:drawableStart="@drawable/ic_search"
+                android:hint="Search"
+                android:maxLines="1"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:padding="16dp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/linear_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/bg_color"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/student_cat_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/family_cat_bt"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bachelor_card"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/bachelor_image"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bachelor" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/bachelor_card"
+                        android:layout_alignStart="@+id/bachelor_card"
+                        android:layout_alignEnd="@+id/bachelor_card"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:maxLines="1"
+                        android:text="Bachelor"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/family_cat_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/office_cat_bt"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/student_cat_bt"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/family_card"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageView
+                            android:id="@+id/family_image"
+                            android:layout_width="90dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/family" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/family_card"
+                        android:layout_alignStart="@+id/family_card"
+                        android:layout_alignEnd="@+id/family_card"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:maxLines="1"
+                        android:text="Family"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/office_cat_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/family_cat_bt"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/office_card"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/work_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="86dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/workspace" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/office_card"
+                        android:layout_alignStart="@+id/office_card"
+                        android:layout_alignEnd="@+id/office_card"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:maxLines="1"
+                        android:text="Office"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_category"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:scrollbarSize="0dp"
+            tools:listitem="@layout/post_layout" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

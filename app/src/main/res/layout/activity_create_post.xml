@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePostActivity">
+
+
+    <LinearLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/button_color"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingEnd="15dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="300dp"
+            android:padding="14dp"
+            android:text="Create Post"
+
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="87dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="150dp"
+            android:src="@drawable/ic_back_arrow"
+
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBar"
+        android:overScrollMode="never"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Upload images:"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <ImageButton
+                    android:id="@+id/add_image_tbtn"
+                    android:padding="5dp"
+                    android:background="@android:color/transparent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:src="@drawable/add_circle_outline"/>
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/images_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:id="@+id/addTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_input_box"
+                android:gravity="start"
+                android:hint="Title"
+                android:padding="14dp"
+                android:textColor="#8c8c8c" />
+
+            <EditText
+                android:id="@+id/addDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_input_box"
+                android:gravity="start"
+                android:hint="Description"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minHeight="120dp"
+                android:padding="10dp"
+                android:textColor="#8c8c8c" />
+
+            <EditText
+                android:id="@+id/addaAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_input_box"
+                android:gravity="start"
+                android:hint="Address"
+                android:padding="14dp"
+                android:textColor="#8c8c8c" />
+
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_input_box"
+                android:gravity="start"
+                android:hint="Phone no."
+                android:inputType="numberDecimal"
+                android:maxLength="11"
+                android:padding="14dp"
+                android:textColor="#8c8c8c" />
+
+            <EditText
+                android:id="@+id/rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_input_box"
+                android:gravity="start"
+                android:hint="$ Rent"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="14dp"
+                android:textColor="#8c8c8c" />
+
+            <CheckBox
+                android:id="@+id/checkboxStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:onClick="onCheckboxClicked"
+                android:text="Student" />
+
+            <CheckBox
+                android:id="@+id/checkboxFamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:minHeight="48dp"
+                android:onClick="onCheckboxClicked"
+                android:text="Family" />
+
+            <CheckBox
+                android:id="@+id/checkboxOffice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:minHeight="48dp"
+                android:onClick="onCheckboxClicked"
+                android:text="Workspace" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/buttons"
+                android:text="POST"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

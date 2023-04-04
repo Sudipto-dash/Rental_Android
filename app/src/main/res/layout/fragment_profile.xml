@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProfileFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="50dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_account"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/edit_input_box"
+        android:hint="Username"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <EditText
+        android:id="@+id/pEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/edit_input_box"
+        android:hint="Email"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/pUserName"
+        app:layout_constraintStart_toStartOf="@+id/pUserName"
+        app:layout_constraintTop_toBottomOf="@+id/pUserName" />
+
+    <EditText
+        android:id="@+id/current_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/edit_input_box"
+        android:hint="Current Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/pEmail"
+        app:layout_constraintStart_toStartOf="@+id/pEmail"
+        app:layout_constraintTop_toBottomOf="@+id/pEmail" />
+
+    <EditText
+        android:id="@+id/new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/edit_input_box"
+        android:hint="New Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/current_password"
+        app:layout_constraintStart_toStartOf="@+id/current_password"
+        app:layout_constraintTop_toBottomOf="@+id/current_password" />
+
+    <EditText
+        android:id="@+id/confirm_new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/edit_input_box"
+        android:hint="Confirm New Password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/new_password"
+        app:layout_constraintStart_toStartOf="@+id/new_password"
+        app:layout_constraintTop_toBottomOf="@+id/new_password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/buttons"
+        android:text="Update"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pEmail"
+        app:layout_constraintStart_toStartOf="@+id/pEmail"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_new_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
