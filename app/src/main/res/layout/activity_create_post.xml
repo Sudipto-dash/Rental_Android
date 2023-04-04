@@ -186,7 +186,7 @@
                 android:checked="false"
                 android:minHeight="48dp"
                 android:onClick="onCheckboxClicked"
-                android:text="Workspace" />
+                android:text="Office" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonPost"

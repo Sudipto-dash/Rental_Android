@@ -62,16 +62,22 @@ public class CategoricalViewActivity extends AppCompatActivity {
 //                    continue;
                 switch (category) {
                     case "student":
-                        if (post.isStudent())
+                        if (post.isStudent()) {
                             posts.add(post);
+                            binding.CategoryTitle.setText("Student");
+                        }
                         break;
                     case "family":
-                        if (post.isFamily())
+                        if (post.isFamily()) {
                             posts.add(post);
+                            binding.CategoryTitle.setText("Family");
+                        }
                         break;
                     case "office":
-                        if (post.isOffice())
+                        if (post.isOffice()) {
                             posts.add(post);
+                            binding.CategoryTitle.setText("Office");
+                        }
                         break;
                 }
             }
