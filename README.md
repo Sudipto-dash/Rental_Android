@@ -4,10 +4,10 @@ House Renting app.<br />
 **Database -> Firebase** <br />
 **Tool -> Android Studio**<br />
 
-Screen Snips:
+Screen Snips:<br />
 **LogIn page**
 ![Login](https://user-images.githubusercontent.com/60656465/229903923-7bd55042-c623-4c1c-a765-5fe693e6e3f5.jpg)
-**SingUp:
+**SingUp:**
 ![SignUp](https://user-images.githubusercontent.com/60656465/229904227-46cf1b8b-82f9-4af1-8054-2831217e08b6.jpg)
 Home:
 ![Home](https://user-images.githubusercontent.com/60656465/229904359-e1b9227a-bb04-4350-a8d8-6b129a419a5a.jpg)
