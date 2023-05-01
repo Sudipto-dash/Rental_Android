@@ -6,7 +6,7 @@ House Renting app.<br />
 
 Screen Snips:<br />
 **LogIn page**
-![Login](https://user-images.githubusercontent.com/60656465/229903923-7bd55042-c623-4c1c-a765-5fe693e6e3f5.jpg =100x100)
+![Login](https://user-images.githubusercontent.com/60656465/229903923-7bd55042-c623-4c1c-a765-5fe693e6e3f5.jpg width=50)
 **SingUp:**
 ![SignUp](https://user-images.githubusercontent.com/60656465/229904227-46cf1b8b-82f9-4af1-8054-2831217e08b6.jpg)
 **Home:**
