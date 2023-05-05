@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -46,11 +47,15 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
+                    //Log.v("SearchResultActivity", dataSnapshot.getChildrenCount() + "");
                     posts.clear();
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
                         Post post = ds.getValue(Post.class);
+                        //System.out.println(post.getTitle() + " " + post.getDescription() + " " + post.getAddress());
                         if (post.getTitle().contains(searchTerm) || post.getDescription().contains(searchTerm) || post.getAddress().contains(searchTerm)) {
                             posts.add(post);
+                            //Log.d("SearchResultActivity", "search ");
                         }
                     }
                     if (posts.size() == 0) {
