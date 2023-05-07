@@ -37,6 +37,12 @@ public class SearchResultActivity extends AppCompatActivity {
         posts = new ArrayList<>();
 
         adapter = new PostAdapter(posts);
+        binding.backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         binding.categoricalRecyclerPost.setLayoutManager(new LinearLayoutManager(this));
         binding.categoricalRecyclerPost.setAdapter(adapter);
@@ -53,7 +59,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
                         Post post = ds.getValue(Post.class);
                         //System.out.println(post.getTitle() + " " + post.getDescription() + " " + post.getAddress());
-                        if (post.getTitle().contains(searchTerm) || post.getDescription().contains(searchTerm) || post.getAddress().contains(searchTerm)) {
+                        if (post.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) || post.getDescription().toLowerCase().contains(searchTerm.toLowerCase()) || post.getAddress().toLowerCase().contains(searchTerm.toLowerCase())) {
                             posts.add(post);
                             //Log.d("SearchResultActivity", "search ");
                         }
