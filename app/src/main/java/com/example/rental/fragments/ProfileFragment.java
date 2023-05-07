@@ -170,28 +170,28 @@ public class ProfileFragment extends Fragment {
             if (!binding.newPassword.getText().toString().trim().isEmpty()) {
                 if (binding.newPassword.getText().toString().trim().length() < 8) {
                     Toast.makeText(getContext(), "Minimum 8 character!", Toast.LENGTH_SHORT).show();
+                    loadingDialog.dismiss();
                     return 1;
                 }
                 if (binding.newPassword.getText().toString().trim().equals(binding.confirmNewPassword.getText().toString().trim())) {
                     if (!getContext().getSharedPreferences("user", Context.MODE_PRIVATE).getString("pass", "").equals(binding.currentPassword.getText().toString().trim())) {
                         Toast.makeText(getContext(), "Current password not matched!", Toast.LENGTH_SHORT).show();
+                        loadingDialog.dismiss();
                         return 1;
                     }
                     FirebaseAuth.getInstance().getCurrentUser().updatePassword(binding.newPassword.getText().toString().trim())
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isComplete()&&task.isSuccessful()) {
-                                        getContext().getSharedPreferences("user", Context.MODE_PRIVATE).edit().putString("pass", binding.newPassword.getText().toString().trim()).apply();
-                                        Toast.makeText(getContext(), "Password Updated!", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();
-                                    }
+                            .addOnCompleteListener(task -> {
+                                if (task.isComplete()&&task.isSuccessful()) {
+                                    getContext().getSharedPreferences("user", Context.MODE_PRIVATE).edit().putString("pass", binding.newPassword.getText().toString().trim()).apply();
+                                    Toast.makeText(getContext(), "Password Updated!", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();
                                 }
                             });
                     return 2;
                 } else {
                     Toast.makeText(getContext(), "New password not matched!", Toast.LENGTH_SHORT).show();
+                    loadingDialog.dismiss();
                     return 1;
                 }
             } else {
